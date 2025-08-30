@@ -36,12 +36,12 @@ public class InitStands {
                     .standRecoveryTicks(20)));
 
 
-    public static final RegistryObject<StandEntityAction> EXAMPLE_STAND_BLOCK = ACTIONS.register("example_stand_block", 
-            () -> new StandEntityBlock());
+//    public static final RegistryObject<StandEntityAction> EXAMPLE_STAND_BLOCK = ACTIONS.register("example_stand_block", 
+//            () -> new StandEntityBlock());
 
 
     // ...then create the Stand type instance. Moves, stats, entity sizes, and a few other things are determined here.
-    public static final EntityStandRegistryObject<EntityStandType<StandStats>, StandEntityType<NovemberRainEntity>> STAND_EXAMPLE_STAND =
+    public static final EntityStandRegistryObject<EntityStandType<StandStats>, StandEntityType<NovemberRainEntity>> NOVEMBER_RAIN =
             new EntityStandRegistryObject<>("november_rain",
                     STANDS, 
                     () -> new EntityStandType.Builder<StandStats>()
@@ -53,21 +53,20 @@ public class InitStands {
                             LIGHT_RAIN.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
-                            .tier(6)
                             .power(1.7)
                             .speed(9)
                             .range(9, 9)
                             .durability(14)
                             .precision(13.6)
                             .build())
-                    .addSummonShout(InitSounds.EXAMPLE_STAND_SUMMON_VOICELINE)
-                    .addOst(InitSounds.EXAMPLE_STAND_OST)
+                    .addSummonShout(InitSounds.NOVEMBER_RAIN_SUMMON_VOICELINE)
+                    .addOst(InitSounds.NOVEMBER_RAIN_OST)
                     .build(),
                     
                     InitEntities.ENTITIES,
                     () -> new StandEntityType<NovemberRainEntity>(NovemberRainEntity::new, 0.7F, 2.1F)
-                    .summonSound(InitSounds.EXAMPLE_STAND_SUMMON_SOUND)
-                    .unsummonSound(InitSounds.EXAMPLE_STAND_UNSUMMON_SOUND))
+                    .summonSound(InitSounds.NOVEMBER_RAIN_SUMMON_SOUND)
+                    .unsummonSound(InitSounds.NOVEMBER_RAIN_UNSUMMON_SOUND))
             .withDefaultStandAttributes();
     
 

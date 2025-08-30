@@ -9,24 +9,27 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.world.World;
 
 public class NovemberRainEntity extends StandEntity {
-    private static final DataParameter<Boolean> HAS_PICKAXE = 
-            EntityDataManager.defineId(NovemberRainEntity.class, DataSerializers.BOOLEAN);
+    /* Example Stand stuff. If you ever need to attach data to the November Rain entity, 
+     * so that it is synchronized to all players - use this as a template.
+     */
+//    private static final DataParameter<Boolean> HAS_PICKAXE = 
+//            EntityDataManager.defineId(NovemberRainEntity.class, DataSerializers.BOOLEAN);
 
     public NovemberRainEntity(StandEntityType<NovemberRainEntity> type, World world) {
         super(type, world);
     }
 
-    @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        entityData.define(HAS_PICKAXE, false);
-    }
-    
-    public boolean hasPickaxe() {
-        return entityData.get(HAS_PICKAXE);
-    }
-    
-    public void setHasPickaxe(boolean hasPickaxe) {
-        entityData.set(HAS_PICKAXE, hasPickaxe);
-    }
+//    @Override
+//    protected void defineSynchedData() {
+//        super.defineSynchedData();
+//        entityData.define(HAS_PICKAXE, false);
+//    }
+//    
+//    public boolean hasPickaxe() {
+//        return entityData.get(HAS_PICKAXE);
+//    }
+//    
+//    public void setHasPickaxe(boolean hasPickaxe) {
+//        entityData.set(HAS_PICKAXE, hasPickaxe);
+//    }
 }
