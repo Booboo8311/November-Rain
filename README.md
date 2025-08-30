@@ -1,5 +1,5 @@
 November Rain Addon
 
-ripple of the paste:https://www.curseforge.com/minecraft/mc-mods/ripples-of-the-past
+Ripples of the Past mod links: modrinth.com/mod/ripples-of-the-past, https://www.curseforge.com/minecraft/mc-mods/ripples-of-the-past
 
-the ripple of the past discord server:https://discord.gg/m9aQHPUk
+RotP Discord Server: https://discord.gg/m9aQHPUk
