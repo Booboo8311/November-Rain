@@ -4,6 +4,8 @@ import com.github.standobyte.jojo.action.stand.StandEntityAction;
 import com.github.standobyte.jojo.entity.stand.StandEntity;
 import com.github.standobyte.jojo.entity.stand.StandEntityTask;
 import com.github.standobyte.jojo.power.impl.stand.IStandPower;
+import com.github.standobyte.jojo.util.mc.damage.DamageUtil;
+
 import net.minecraft.world.World;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -13,8 +15,8 @@ import net.minecraft.particles.ParticleTypes;
 import java.util.List;
 
 public class LightRain extends StandEntityAction {
-    public static final int RAIN_RADIUS = 5;
-    public static final float DAMAGE = 1.5F;
+    public int RAIN_RADIUS = 5;
+    public float DAMAGE_PER_TICK = 0.4F;
 
     public LightRain(Builder builder) {
         super(builder);
@@ -37,7 +39,7 @@ public class LightRain extends StandEntityAction {
 
             for (Entity entity : entities) {
                 if (entity != standEntity && entity != standEntity.getUser()) {
-                    entity.hurt(DamageSource.DROWN, DAMAGE);
+                    affectEntity(entity);
                 }
             }
         } else {
@@ -54,6 +56,10 @@ public class LightRain extends StandEntityAction {
                 );
             }
         }
+    }
+    
+    protected void affectEntity(Entity targetEntity) {
+        DamageUtil.hurtThroughInvulTicks(targetEntity, DamageSource.DROWN, DAMAGE_PER_TICK);
     }
 }
 

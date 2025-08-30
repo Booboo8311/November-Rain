@@ -2,18 +2,14 @@ package com.ptitboo83.novemberrain.init;
 
 import com.github.standobyte.jojo.action.Action;
 import com.github.standobyte.jojo.action.stand.StandEntityAction;
-import com.github.standobyte.jojo.action.stand.StandEntityBlock;
-import com.github.standobyte.jojo.action.stand.StandEntityHeavyAttack;
-import com.github.standobyte.jojo.action.stand.StandEntityLightAttack;
-import com.github.standobyte.jojo.action.stand.StandEntityMeleeBarrage;
 import com.github.standobyte.jojo.entity.stand.StandEntityType;
 import com.github.standobyte.jojo.init.power.stand.EntityStandRegistryObject;
 import com.github.standobyte.jojo.init.power.stand.ModStandsInit;
-import com.github.standobyte.jojo.power.impl.stand.StandInstance.StandPart;
 import com.github.standobyte.jojo.power.impl.stand.stats.StandStats;
 import com.github.standobyte.jojo.power.impl.stand.type.EntityStandType;
 import com.github.standobyte.jojo.power.impl.stand.type.StandType;
 import com.ptitboo83.novemberrain.AddonMain;
+import com.ptitboo83.novemberrain.action.HeavyRain;
 import com.ptitboo83.novemberrain.action.LightRain;
 import com.ptitboo83.novemberrain.entity.NovemberRainEntity;
 
@@ -32,7 +28,13 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> LIGHT_RAIN = ACTIONS.register("light_rain",
             () -> new LightRain(new StandEntityAction.Builder()
                     .holdType()
-                    .staminaCost(2.0F)
+                    .staminaCostTick(2.0F)
+                    .standRecoveryTicks(5)));
+    
+    public static final RegistryObject<StandEntityAction> HEAVY_RAIN = ACTIONS.register("heavy_rain",
+            () -> new HeavyRain(new StandEntityAction.Builder()
+                    .holdType()
+                    .staminaCostTick(5.0F)
                     .standRecoveryTicks(20)));
 
 
@@ -48,9 +50,10 @@ public class InitStands {
                     .color(0x2967a2)
                     .storyPartName(ModStandsInit.PART_9_NAME)
                     .leftClickHotbar(
+                            LIGHT_RAIN.get()
                             )
                     .rightClickHotbar(
-                            LIGHT_RAIN.get()
+                            HEAVY_RAIN.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .power(1.7)
