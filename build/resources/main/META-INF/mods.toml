@@ -1,0 +1,38 @@
+
+modLoader="javafml"
+loaderVersion="[36,)"
+
+license="GNU GPL v3.0"
+
+[[mods]]
+modId="november-rain-addon"
+version="${file.jarVersion}"
+displayName="RotP Stand Addon"
+
+logoFile="examplemod.png"
+credits="StandoByte, "
+
+authors="Ptitboo83,the one who will make the texture"
+
+description='''november rain'''
+
+[[dependencies.november-rain-addon]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.november-rain-addon]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.november-rain-addon]]
+    modId="jojo"
+    mandatory=true
+    versionRange="[0.2.2,0.3)"
+    ordering="AFTER"
+    side="BOTH"
