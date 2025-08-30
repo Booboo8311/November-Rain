@@ -16,21 +16,19 @@ public class InitSounds {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(
             ForgeRegistries.SOUND_EVENTS, AddonMain.MOD_ID); // TODO sounds.json
     
-    public static final RegistryObject<SoundEvent> EXAMPLE_STAND_SUMMON_VOICELINE = SOUNDS.register("example_stand_summon_voiceline", 
-            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "example_stand_summon_voiceline")));
+    public static final RegistryObject<SoundEvent> NOVEMBER_RAIN_SUMMON_VOICELINE = SOUNDS.register("jodio_november_rain", 
+            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "jodio_november_rain")));
 
-    public static final Supplier<SoundEvent> EXAMPLE_STAND_SUMMON_SOUND = ModSounds.STAND_SUMMON_DEFAULT;
+    public static final Supplier<SoundEvent> NOVEMBER_RAIN_SUMMON_SOUND = ModSounds.STAND_SUMMON_DEFAULT;
     
-    public static final Supplier<SoundEvent> EXAMPLE_STAND_UNSUMMON_SOUND = ModSounds.STAND_UNSUMMON_DEFAULT;
+    public static final Supplier<SoundEvent> NOVEMBER_RAIN_UNSUMMON_SOUND = ModSounds.STAND_UNSUMMON_DEFAULT;
     
-    public static final Supplier<SoundEvent> EXAMPLE_STAND_PUNCH_LIGHT = ModSounds.STAND_PUNCH_LIGHT;
+//    public static final Supplier<SoundEvent> NOVEMBER_RAIN_PUNCH_LIGHT = ModSounds.STAND_PUNCH_LIGHT;
+//    
+//    public static final Supplier<SoundEvent> NOVEMBER_RAIN_PUNCH_HEAVY = ModSounds.STAND_PUNCH_HEAVY;
+//    
+//    public static final Supplier<SoundEvent> NOVEMBER_RAIN_PUNCH_BARRAGE = ModSounds.STAND_PUNCH_LIGHT;
     
-    public static final Supplier<SoundEvent> EXAMPLE_STAND_PUNCH_HEAVY = ModSounds.STAND_PUNCH_HEAVY;
-    
-    public static final Supplier<SoundEvent> EXAMPLE_STAND_PUNCH_BARRAGE = ModSounds.STAND_PUNCH_LIGHT;
-    
-    public static final Supplier<SoundEvent> EXAMPLE_STAND_THROW_PICKAXE = ModSounds.STAND_PUNCH_LIGHT;
-    
-    public static final OstSoundList EXAMPLE_STAND_OST = new OstSoundList(
-            new ResourceLocation(AddonMain.MOD_ID, "example_stand_ost"), SOUNDS);
+    public static final OstSoundList NOVEMBER_RAIN_OST = new OstSoundList(
+            new ResourceLocation(AddonMain.MOD_ID, "november_rain_ost"), SOUNDS);
 }
